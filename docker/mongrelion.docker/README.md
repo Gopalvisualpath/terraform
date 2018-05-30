@@ -50,39 +50,3 @@ Install and configure docker daemon
         userland-proxy: false
 ```
 
-## Local Testing
-
-The preferred way of locally testing the role is to use Docker and [molecule](https://github.com/metacloud/molecule) (v1.25). You will have to install Docker on your system. See Get started for a Docker package suitable to for your system.
-All packages you need to can be specified in one line:
-```sh
-pip install ansible 'ansible-lint>=3.4.15' 'molecule==1.25.0' docker 'testinfra>=1.7.0,<=1.10.1' jmespath
-```
-This should be similar to one listed in `.travis.yml` file in `install` section.
-After installing test suit you can run test by running
-```sh
-molecule test
-```
-For more information about molecule go to their [docs](http://molecule.readthedocs.io/en/stable-1.25/).
-
-## License
-
-This project is licensed under MIT License. See [LICENSE](/LICENSE) for more details.
-
-## Author Information
-
-You can find me on Twitter: [@mongrelion](https://twitter.com/mongrelion)
-
-## Contributors
-
-- Carlos Leon ([@mongrelion](https://github.com/mongrelion))
-- Paweł Krupa ([@paulfantom](https://github.com/paulfantom))
-- Marcus Levine ([@marcusianlevine](https://github.com/marcusianlevine))
-- Manuel Hutter ([@mhutter](https://github.com/mhutter))
-- Dmitri Bichko ([@dbichko](https://github.com/dbichko))
-- Zane Westover ([@zanewestover](https://github.com/zanewestover))
-- Bruce Becker ([@brucellino](https://github.com/brucellino))
-- David Wahlstrom ([@drwahl](https://github.com/drwahl))
-- Max Oreshnikov ([@maxim0r](https://github.com/maxim0r))
-- Nicholas E. Rabenau ([@nerab](https://github.com/nerab))
-- Petr Balogh ([@petr-balogh](https://github.com/petr-balogh))
-- ramz ([@ageekymonk](https://github.com/ageekymonk))
