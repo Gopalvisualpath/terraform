@@ -6,6 +6,6 @@
 
 
 - hosts: dbservers
-  become: yes
+  become: no
   roles:
     - mongrelion.docker 
