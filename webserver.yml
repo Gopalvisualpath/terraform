@@ -2,7 +2,7 @@
 - hosts: webservers
   become: yes
   vars:
-    http_port: 80
+    http_port: 443
     doc_dir: /ansible/
     doc_root: /var/www/html/ansible/
     max_clients: 5
