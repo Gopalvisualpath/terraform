@@ -8,7 +8,7 @@
 # ------------------------------------------------------------------------------
 
 provider "aws" {
-  region = "us-east-1"
+  region = "us-west-2"
 }
 
 # ---------------------------------------------------------------------------------------------------------------------
@@ -17,14 +17,15 @@ provider "aws" {
 
 resource "aws_instance" "example" {
   # Ubuntu Server 14.04 LTS (HVM), SSD Volume Type in us-east-1
-  ami = "ami-2d39803a"
+  ami = "ami-6cd6f714"
   instance_type = "t2.micro"
+  key_name = "jenkinsdemo"
   vpc_security_group_ids = ["${aws_security_group.instance.id}"]
-
   user_data = <<-EOF
               #!/bin/bash
-              echo "Hello, World" > index.html
-              nohup busybox httpd -f -p "${var.server_port}" &
+              yum install httpd -y
+              service httpd start
+              echo "Hello, World" > /var/www/html/index.html
               EOF
 
   tags {
