@@ -71,7 +71,7 @@ resource "aws_launch_configuration" "example" {
 # ---------------------------------------------------------------------------------------------------------------------
 
 resource "aws_security_group" "instance" {
-  name = "terraform-example-instance"
+  name = "terraform-example2-instance"
 
   # Inbound HTTP from anywhere
   ingress {
@@ -80,6 +80,13 @@ resource "aws_security_group" "instance" {
     protocol = "tcp"
     cidr_blocks = ["0.0.0.0/0"]
   }
+  egress {
+    from_port = 0
+    to_port = 0
+    protocol = "-1"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+
 
   # aws_launch_configuration.launch_configuration in this module sets create_before_destroy to true, which means
   # everything it depends on, including this resource, must set it as well, or you'll get cyclic dependency errors
