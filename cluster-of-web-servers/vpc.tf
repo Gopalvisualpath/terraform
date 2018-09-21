@@ -29,7 +29,7 @@ resource "aws_key_pair" "default_keypair" {
 # Subnet (public)
 resource "aws_subnet" "demo" {
   vpc_id = "${aws_vpc.demo.id}"
-  cidr_block = "${var.vpc_cidr}"
+  cidr_block = "${var.subnet_cidr}"
   availability_zone = "${var.zone}"
 
   tags {
