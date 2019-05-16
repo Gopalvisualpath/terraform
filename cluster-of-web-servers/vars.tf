@@ -7,6 +7,9 @@ variable "server_port" {
   default = 80
 }
 
+variable "owner" {
+  default = "gopal"
+}
 
 variable default_keypair_public_key {
   description = "Public Key of the default keypair"
